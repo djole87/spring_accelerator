@@ -25,6 +25,8 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <!--line below added to override hibernate version from spring-boot-->
+        <hibernate.version>5.0.9.Final</hibernate.version>
     </properties>
 
 </project>

@@ -18,7 +18,7 @@ import java.util.Properties;
 @Configuration
 @ComponentScan({"rs.refreshit.contacts.service.config", "rs.refreshit.contacts.model"})
 @PropertySource(value = {"classpath:hibernate/hibernate.properties"})
-public class HIbernateConfiguration {
+public class HibernateConfiguration {
 
     @Autowired
     private Environment environment;
@@ -38,7 +38,7 @@ public class HIbernateConfiguration {
         dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driverClassName"));
         dataSource.setUrl(environment.getRequiredProperty("jdbc.url"));
         dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
-        dataSource.setUsername(environment.getRequiredProperty("jdbc.password"));
+        dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
         return dataSource;
     }
 
