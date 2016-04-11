@@ -2,15 +2,33 @@ package rs.refreshit.contacts.model.entity;
 
 import rs.refreshit.contacts.model.code.Sex;
 
+import javax.persistence.*;
+
 /**
  * Created by Administrator on 4/10/2016.
  */
+@Table(name = "CONTACT")
+@Entity
 public final class Contact extends AbstractEntity {
+
+    @Column(name = "FIRSTNAME", table = "CONTACT", nullable = false)
     private String firstName;
+
+    @Column(name = "LASTNAME", table = "CONTACT", nullable = false)
     private String lastName;
+
+    @Column(name = "PHONE", table = "CONTACT", nullable = false)
     private String phone;
+
+    @Column(name = "EMAIL", table = "CONTACT")
     private String email;
+
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Address.class, optional = false)
+    @JoinColumn(table = "CONTACT", name = "SEX_ID", nullable = false)
     private Sex sex;
+
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Sex.class, optional = false)
+    @JoinColumn(table = "CONTACT", name = "ADDRESS_ID", nullable = false)
     private Address address;
 
     public String getFirstName() {
