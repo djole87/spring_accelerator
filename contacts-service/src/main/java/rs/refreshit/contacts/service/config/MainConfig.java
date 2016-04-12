@@ -7,6 +7,6 @@ import org.springframework.context.annotation.Import;
  * Created by Administrator on 4/10/2016.
  */
 @Configuration
-@Import({ContactsServiceConfig.class, HibernateConfiguration.class})
+@Import({ContactsServiceConfig.class, HibernateConfig.class})
 public class MainConfig {
 }

@@ -18,7 +18,7 @@ import java.util.Properties;
 @Configuration
 @ComponentScan({"rs.refreshit.contacts.service.config", "rs.refreshit.contacts.model"})
 @PropertySource(value = {"classpath:hibernate/hibernate.properties"})
-public class HibernateConfiguration {
+public class HibernateConfig {
 
     @Autowired
     private Environment environment;
