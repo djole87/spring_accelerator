@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+						http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="3" author="djstanojevic">
+        <comment>Table City created</comment>
+
+        <createTable tableName="CITY">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ZIP_CODE" type="VARCHAR(2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="COUNTRY_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey tableName="CITY" columnNames="ID"/>
+        <addForeignKeyConstraint
+                baseTableName="CITY"
+                baseColumnNames="COUNTRY_ID"
+                constraintName="CITY_COUNTRY_FK"
+                referencedTableName="COUNTRY"
+                referencedColumnNames="ID"/>
+
+    </changeSet>
+
+    <changeSet id="9" author="djstanojevic">
+        <comment>Test Data inserted into the City table</comment>
+
+        <insert tableName="CITY">
+            <column name="NAME" value="Beograd"/>
+            <column name="ZIP_CODE" value="11000"/>
+            <column name="COUNTRY_ID" value="1"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="NAME" value="Novi Sad"/>
+            <column name="ZIP_CODE" value="21000"/>
+            <column name="COUNTRY_ID" value="1"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="NAME" value="Uzice"/>
+            <column name="ZIP_CODE" value="31000"/>
+            <column name="COUNTRY_ID" value="1"/>
+        </insert>
+
+        <insert tableName="CITY">
+            <column name="NAME" value="Rome"/>
+            <column name="ZIP_CODE" value="00144"/>
+            <column name="COUNTRY_ID" value="2"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="NAME" value="Crotone"/>
+            <column name="ZIP_CODE" value="88900"/>
+            <column name="COUNTRY_ID" value="2"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="NAME" value="Palermo"/>
+            <column name="ZIP_CODE" value="90121"/>
+            <column name="COUNTRY_ID" value="2"/>
+        </insert>
+
+        <insert tableName="CITY">
+            <column name="NAME" value="Athens"/>
+            <column name="ZIP_CODE" value="100"/>
+            <column name="COUNTRY_ID" value="2"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="NAME" value="Maroussi"/>
+            <column name="ZIP_CODE" value="151"/>
+            <column name="COUNTRY_ID" value="2"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="NAME" value="Papagos"/>
+            <column name="ZIP_CODE" value="156"/>
+            <column name="COUNTRY_ID" value="2"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

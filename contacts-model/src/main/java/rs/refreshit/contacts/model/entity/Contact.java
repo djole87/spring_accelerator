@@ -23,11 +23,11 @@ public final class Contact extends AbstractEntity {
     @Column(name = "EMAIL", table = "CONTACT")
     private String email;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Address.class, optional = false)
+    @ManyToOne(targetEntity = Address.class, optional = false)
     @JoinColumn(table = "CONTACT", name = "SEX_ID", nullable = false)
     private Sex sex;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Sex.class, optional = false)
+    @ManyToOne(targetEntity = Sex.class, optional = false)
     @JoinColumn(table = "CONTACT", name = "ADDRESS_ID", nullable = false)
     private Address address;
 

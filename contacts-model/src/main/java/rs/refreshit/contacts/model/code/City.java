@@ -13,7 +13,7 @@ public final class City extends AbstractCode {
     @Column(name = "ZIP_CODE", table = "CITY", nullable = false)
     private final String zipCode;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Country.class, optional = false)
+    @ManyToOne(targetEntity = Country.class, optional = false)
     @JoinColumn(table = "CITY", name = "COUNTRY_ID", nullable = false)
     private final Country country;
 

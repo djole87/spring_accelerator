@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+						http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="2" author="djstanojevic">
+        <comment>Table Country created</comment>
+
+        <createTable tableName="COUNTRY">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ALPHA_2" type="VARCHAR(2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ALPHA_3" type="VARCHAR(3)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey tableName="COUNTRY" columnNames="ID"/>
+
+    </changeSet>
+
+    <changeSet id="8" author="djstanojevic">
+        <comment>Test Data inserted into Country table</comment>
+
+        <insert tableName="Country">
+            <column name="NAME" value="Serbia"/>
+            <column name="ALPHA_2" value="RS"/>
+            <column name="ALPHA_3" value="SRB"/>
+        </insert>
+        <insert tableName="Country">
+            <column name="NAME" value="Italy"/>
+            <column name="ALPHA_2" value="IT"/>
+            <column name="ALPHA_3" value="ITA"/>
+        </insert>
+        <insert tableName="Country">
+            <column name="NAME" value="Belgium"/>
+            <column name="ALPHA_2" value="BE"/>
+            <column name="ALPHA_3" value="BEL"/>
+        </insert>
+        <insert tableName="Country">
+            <column name="NAME" value="France"/>
+            <column name="ALPHA_2" value="FR"/>
+            <column name="ALPHA_3" value="FRA"/>
+        </insert>
+        <insert tableName="Country">
+            <column name="NAME" value="Greece"/>
+            <column name="ALPHA_2" value="GR"/>
+            <column name="ALPHA_3" value="GRC"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

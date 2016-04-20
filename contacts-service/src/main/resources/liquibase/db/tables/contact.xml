@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+						http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="5" author="djstanojevic">
+        <comment>Table Contact created</comment>
+
+        <createTable tableName="CONTACT">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FIRSTNAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LASTNAME" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PHONE" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EMAIL" type="VARCHAR(50)"/>
+            <column name="ADDRESS_ID" type="BIGINT">
+                <constraints nullable="false" />
+            </column>
+            <column name="SEX_ID" type="BIGINT">
+                <constraints nullable="false" />
+            </column>
+            <column name="CONTACT_BOOK_ID" type="BIGINT"/>
+
+        </createTable>
+
+        <addPrimaryKey tableName="CONTACT" columnNames="ID"/>
+        <addForeignKeyConstraint
+                baseTableName="CONTACT"
+                baseColumnNames="ADDRESS_ID"
+                constraintName="CONTACT_ADDRESS_FK"
+                referencedTableName="ADDRESS"
+                referencedColumnNames="ID"/>
+        <addForeignKeyConstraint
+                baseTableName="CONTACT"
+                baseColumnNames="SEX_ID"
+                constraintName="CONTACT_SEX_FK"
+                referencedTableName="SEX"
+                referencedColumnNames="ID"/>
+        <addForeignKeyConstraint
+                baseTableName="CONTACT"
+                baseColumnNames="CONTACT_BOOK_ID"
+                constraintName="CONTACT_CB_FK"
+                referencedTableName="CONTACT_BOOK"
+                referencedColumnNames="ID"
+                onDelete="CASCADE"
+                onUpdate="CASCADE"/>
+
+    </changeSet>
+
+</databaseChangeLog>

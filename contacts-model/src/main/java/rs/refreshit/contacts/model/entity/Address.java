@@ -17,7 +17,7 @@ public final class Address extends AbstractEntity{
     @Column(name = "STREET_NO", nullable = false)
     private String streetNo;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = City.class, optional = false)
+    @ManyToOne(targetEntity = City.class, optional = false)
     @JoinColumn(table = "ADDRESS", name = "CITY_ID", nullable = false)
     private City city;
 
