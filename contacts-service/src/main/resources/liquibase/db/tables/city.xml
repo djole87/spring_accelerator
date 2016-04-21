@@ -14,7 +14,7 @@
             <column name="NAME" type="VARCHAR(50)">
                 <constraints nullable="false"/>
             </column>
-            <column name="ZIP_CODE" type="VARCHAR(2)">
+            <column name="ZIP_CODE" type="VARCHAR(20)">
                 <constraints nullable="false"/>
             </column>
             <column name="COUNTRY_ID" type="BIGINT">
@@ -70,17 +70,49 @@
         <insert tableName="CITY">
             <column name="NAME" value="Athens"/>
             <column name="ZIP_CODE" value="100"/>
-            <column name="COUNTRY_ID" value="2"/>
+            <column name="COUNTRY_ID" value="5"/>
         </insert>
         <insert tableName="CITY">
             <column name="NAME" value="Maroussi"/>
             <column name="ZIP_CODE" value="151"/>
-            <column name="COUNTRY_ID" value="2"/>
+            <column name="COUNTRY_ID" value="5"/>
         </insert>
         <insert tableName="CITY">
             <column name="NAME" value="Papagos"/>
             <column name="ZIP_CODE" value="156"/>
-            <column name="COUNTRY_ID" value="2"/>
+            <column name="COUNTRY_ID" value="5"/>
+        </insert>
+
+        <insert tableName="CITY">
+            <column name="NAME" value="Bruxelles"/>
+            <column name="ZIP_CODE" value="1000"/>
+            <column name="COUNTRY_ID" value="3"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="NAME" value="Anderlecht"/>
+            <column name="ZIP_CODE" value="1070"/>
+            <column name="COUNTRY_ID" value="3"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="NAME" value="Ganshoren"/>
+            <column name="ZIP_CODE" value="1083"/>
+            <column name="COUNTRY_ID" value="3"/>
+        </insert>
+
+        <insert tableName="CITY">
+            <column name="NAME" value="Paris"/>
+            <column name="ZIP_CODE" value="75008"/>
+            <column name="COUNTRY_ID" value="4"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="NAME" value="Caen"/>
+            <column name="ZIP_CODE" value="14000"/>
+            <column name="COUNTRY_ID" value="4"/>
+        </insert>
+        <insert tableName="CITY">
+            <column name="NAME" value="Marseille"/>
+            <column name="ZIP_CODE" value="13002"/>
+            <column name="COUNTRY_ID" value="4"/>
         </insert>
 
     </changeSet>
