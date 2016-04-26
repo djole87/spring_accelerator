@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Access(AccessType.FIELD)
 @Table(name = "COUNTRY")
 @Entity
-final class Country extends AbstractCode{
+public final class Country extends AbstractCode{
 
     @Column(name = "ALPHA_2", table = "COUNTRY", nullable = false, unique = true)
     private final String alphaTwo;

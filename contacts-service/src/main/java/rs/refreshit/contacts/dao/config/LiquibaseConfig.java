@@ -1,4 +1,4 @@
-package rs.refreshit.contacts.service.config;
+package rs.refreshit.contacts.dao.config;
 
 import liquibase.integration.spring.SpringLiquibase;
 import org.springframework.beans.factory.annotation.Autowired;

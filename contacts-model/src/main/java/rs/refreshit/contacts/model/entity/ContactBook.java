@@ -11,7 +11,7 @@ import java.util.Set;
 @Entity
 public class ContactBook extends AbstractEntity{
 
-    @OneToMany(targetEntity = Contact.class, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(targetEntity = Contact.class, cascade = CascadeType.PERSIST, orphanRemoval = true)
     @JoinColumn(name = "CONTACT_BOOK_ID", referencedColumnName = "ID")
     private Set<Contact> contacts = new HashSet<>();
 
