@@ -21,6 +21,13 @@ public final class Address extends AbstractEntity{
     @JoinColumn(table = "ADDRESS", name = "CITY_ID", nullable = false)
     private City city;
 
+    public Address(){}
+
+    public Address(String street, String streetNo) {
+        this.street = street;
+        this.streetNo = streetNo;
+    }
+
     public String getStreet() {
         return street;
     }

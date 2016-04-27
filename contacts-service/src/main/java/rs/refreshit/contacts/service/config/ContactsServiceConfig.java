@@ -1,9 +1,11 @@
-package rs.refreshit.contacts.dao.config;
+package rs.refreshit.contacts.service.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import rs.refreshit.contacts.dao.config.HibernateConfig;
+import rs.refreshit.contacts.dao.config.LiquibaseConfig;
 import rs.refreshit.contacts.model.code.AbstractCode;
 import rs.refreshit.contacts.model.code.City;
 import rs.refreshit.contacts.model.code.Country;

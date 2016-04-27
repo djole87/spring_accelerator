@@ -11,7 +11,7 @@ import java.io.Serializable;
 public abstract class AbstractCode implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", updatable = false, nullable = false)
     private final Long id;
 

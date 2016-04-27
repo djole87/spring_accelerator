@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import rs.refreshit.contacts.dao.ContactBookDao;
 import rs.refreshit.contacts.model.entity.ContactBook;
 
+import java.io.Serializable;
+
 /**
  * Created by Djordje on 4/25/2016.
  */
@@ -19,11 +21,11 @@ public class HibernateContactBookDao extends AbstractHibernateDao<ContactBook> i
 
     @Override
     public ContactBook fetchById(final Long id) {
-        return fetchById(id);
+        return loadById(ContactBook.class, id);
     }
 
     @Override
-    public ContactBook save(final ContactBook contactBook) {
+    public Serializable save(final ContactBook contactBook) {
         return persist(contactBook);
     }
 

@@ -33,8 +33,8 @@ public abstract class AbstractHibernateDao<T> {
         return session().load(type, id);
     }
 
-    protected T persist(final T type){
-        return (T) session().save(type);
+    protected Serializable persist(final T type){
+        return session().save(type);
     }
 
     protected void edit(final T type){

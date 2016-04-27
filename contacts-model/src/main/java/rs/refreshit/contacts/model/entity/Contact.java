@@ -23,13 +23,20 @@ public final class Contact extends AbstractEntity {
     @Column(name = "EMAIL", table = "CONTACT")
     private String email;
 
-    @ManyToOne(targetEntity = Address.class, optional = false)
+    @ManyToOne(targetEntity = Sex.class, optional = false)
     @JoinColumn(table = "CONTACT", name = "SEX_ID", nullable = false)
     private Sex sex;
 
-    @ManyToOne(targetEntity = Sex.class, optional = false)
+    @ManyToOne(targetEntity = Address.class, optional = false, cascade = CascadeType.ALL)
     @JoinColumn(table = "CONTACT", name = "ADDRESS_ID", nullable = false)
     private Address address;
+
+    public Contact(){}
+    public Contact(String firstName, String lastName,String phone){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+    }
 
     public String getFirstName() {
         return firstName;
