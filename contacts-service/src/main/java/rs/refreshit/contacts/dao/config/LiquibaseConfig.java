@@ -4,11 +4,13 @@ import liquibase.integration.spring.SpringLiquibase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 /**
  * Created by Djordje on 4/12/2016.
  */
 @Configuration
+@Import(HibernateConfig.class)
 public class LiquibaseConfig {
 
     @Autowired
